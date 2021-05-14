@@ -1,0 +1,26 @@
+{
+  "name": "node-version-validator",
+  "version": "1.0.0",
+  "description": "Install with `npm i github:Smart-Tag-Studio/node-version-validator`",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smart-Tag-Studio/node-version-validator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Smart-Tag-Studio/node-version-validator/issues"
+  },
+  "homepage": "https://github.com/Smart-Tag-Studio/node-version-validator#readme",
+  "dependencies": {
+    "semver": "^7.3.5"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
