@@ -1,12 +1,21 @@
 const semver = require('semver');
 const pkg_json = process.env[`npm_package_json`];
+const pkg_name = process.env[`npm_package_name`];
+let pkg;
 
-if (!pkg_json) {
+if (!pkg_name) {
     console.log(`Run this script inside an npm script to receive the npm environmental variables`);
     process.exit(1);
 }
 
-const pkg = JSON.parse(require('fs').readFileSync(pkg_json, 'UTF-8'));
+if (pkg_json) {
+    pkg = JSON.parse(require('fs').readFileSync(pkg_json, 'UTF-8'));
+} else {
+    pkg = {
+        engineStrict: !!process.env[`npm_package_engineStrict`],
+        engines: Object.keys(process.env).filter(k => k.match(`npm_package_engines_`)).reduce((s,k) => { s[k.replace(`npm_package_engines_`, '')]=process.env[k]; return s; }, {}),
+    };
+}
 
 if (!pkg.engines) {
     process.exit(0);

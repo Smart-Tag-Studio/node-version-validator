@@ -1,7 +1,7 @@
 {
   "name": "node-version-validator",
   "version": "1.0.0",
-  "description": "Install with `npm i github:Smart-Tag-Studio/node-version-validator`",
+  "description": "It checks the field engines in package.json against the current environment",
   "main": "index.js",
   "scripts": {
     "test": "node ./index.js"
