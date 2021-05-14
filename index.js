@@ -33,21 +33,21 @@ try {
         if (version.required && version.current) {
             matches = semver.satisfies(version.current, version.required);
         } else {
-            console.error(`Unable to test ${engine} ${version.required}. Please open an issue on github: https://github.com/Smart-Tag-Studio/node-version-validator/issues`)
+            console.error(`\x1b[31mUnable to test \x1b[37m${engine} ${version.required}.\x1b[33m Please open an issue on github: https://github.com/Smart-Tag-Studio/node-version-validator/issues\x1b[0m`)
         }
         
         if (matches === false) {
             if (pkg.engineStrict) {
-                console.log(`You're currently running ${engine} ${version.current}. This project requires ${engine} ${version.required}.`);
+                console.log(`You're currently running ${engine} ${version.current}. \x1b[41m\x1b[30m This project requires ${engine} ${version.required} \x1b[0m`);
                 console.log(`Change your ${engine} version and try again`);
                 process.exit(1);
             } else {
-                console.log(`You're currently running ${engine} ${version.current}. This project recommends ${engine} ${version.required}.`);
+                console.log(`You're currently running ${engine} ${version.current}. \x1b[43m\x1b[30m This project recommends ${engine} ${version.required} \x1b[0m`);
             }
         }
     });
 } catch(e) {
     console.error(`\x1b[31m[node-version-validator] Something went wrong. ERROR STARTS HERE`);
     console.error(e);
-    console.error(`\x1b[31m[node-version-validator] Something went wrong. ERROR ENDS HERE.\x1b[33m Please open an issue on github: https://github.com/Smart-Tag-Studio/node-version-validator/issues and send us the error above\x1b[37m`);
+    console.error(`\x1b[31m[node-version-validator] Something went wrong. ERROR ENDS HERE.\x1b[33m Please open an issue on github: https://github.com/Smart-Tag-Studio/node-version-validator/issues and send us the error above\x1b[0m`);
 }
