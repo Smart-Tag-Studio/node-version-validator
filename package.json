@@ -6,6 +6,9 @@
   "scripts": {
     "test": "node ./index.js"
   },
+  "bin": {
+    "nvv": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Smart-Tag-Studio/node-version-validator.git"
